@@ -1,0 +1,123 @@
+:root {
+    /* colors */
+    --beige: #F2E3D5;
+    --teal: #026773;
+    --darkTeal: #012E40;
+    --lightTeal: #5fc1c1;
+    --mediumTeal: #024959;
+
+    /* fonts */
+    --sans: "Fira Sans", sans-serif;
+
+    /* font scale */
+    --base-size: 1rem;
+    --scale: 1.25;
+    --xl: calc(var(--lg) * var(--scale));
+    --lg: calc(var(--h1) * var(--scale));
+    --h1: calc(var(--h2) * var(--scale));
+    --h2: calc(var(--h4) * var(--scale));
+    --h3: calc(var(--h4) * var(--scale));
+    --h4: calc(var(--h5) * var(--scale));
+    --h5: calc(var(--h6) * var(--scale));
+    --h6: var(--base-size);
+    --small: calc(var(--base-size) / var(--scale));
+}
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+    font-family: var(--sans);
+    background-color: var(--beige);
+}
+main {
+    background-color: var(--lightTeal);
+    max-width: 800px;
+    margin: var(--xl) auto;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.5fr 1fr;
+}
+h1 {
+    color: var(--darkTeal);
+    font-size: var(--h1);
+    margin-top: var(--xl);
+    text-align: center;
+    
+}
+h2 {
+    color: var(--mediumTeal);
+    justify-self: start;
+    margin-left: 5rem;
+    margin-top: 3rem;
+    font-size: var(--h2);
+}
+#form {
+    grid-area: 1/2/2/3;
+    align-self: center;
+    justify-self: start;
+}
+#form input {
+    margin-top: 2.5rem;
+    outline: 0;
+    max-width: 10rem;
+    border: 2px solid var(--teal);
+    border-radius: 5px;
+    background-color: var(--beige);
+    font-family: var(--sans);
+    font-size: var(--h5);
+    color: var(--mediumTeal);
+    transition: box-shadow 0.2s ease-in-out;
+}
+#form input:focus {
+    box-shadow: 0.125rem 0.125rem 0.25rem 0 rgb(1, 46, 64, 0.5);;
+}
+#form button {
+    margin-top: 2.5rem;
+    margin-left: 2rem;
+    font-family: var(--sans);
+    font-size: var(--h6);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    color: var(--beige);
+    background-color: var(--mediumTeal);
+    transition: all 0.2s;
+}
+#form button:hover {
+    background-color: var(--teal);
+    border: 1px solid var(--mediumTeal);
+    box-shadow: 0.125rem 0.125rem 0.25rem 0 rgb(1, 46, 64, 0.5);;
+}
+#form button:active {
+    transform: translateY(2px);
+
+}
+#responseField {
+    grid-area: 2/1/3/3;
+}
+#responseAge, #responseGender, #responseNation {
+    margin-left: 5rem;  
+}
+#conversion {
+    display: flex;
+    justify-content: start;
+    margin-left: 5rem; 
+    grid-area: 3/1/4/3;
+}
+p {
+    color: var(--darkTeal);
+}
+#responseField p {
+    font-size: var(--h6);
+}
+#conversion p {
+    margin-right: 1rem;
+    font-size: var(--small);
+    font-style: italic;
+}

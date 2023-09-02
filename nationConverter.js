@@ -1,6 +1,6 @@
 const nationConverter = (code) => {
     code = code.toLowerCase();
-    const url = `http://api.worldbank.org/v2/country/${code}?format=json`
+    const url = `https://api.worldbank.org/v2/country/${code}?format=json`
     fetch(url)
     .then(response => {
         if (response.ok){
